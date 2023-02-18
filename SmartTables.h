@@ -25,5 +25,5 @@ private:
     RectangleShape * ExternalNoTable;
     RectangleShape * InternalNoTable;
 
-    TextLabel * Label;
+    TextLabel * NoTable;
 };
