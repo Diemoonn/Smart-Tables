@@ -7,11 +7,11 @@ SmartTables::SmartTables(QWidget *parent)
 
     setFixedSize(WIDTH, HEIGHT);
 
-    TopBox = new RectangleShape(1440, 117, 0, 0, Qt::GlobalColor::darkMagenta, this);
-    ExternalNoTable = new RectangleShape(845, 597, 298, 214, Qt::GlobalColor::gray, this);
-    InternalNoTable = new RectangleShape(787, 545, 330, 240, Qt::GlobalColor::white, this);
+    TopBox = new RectangleShape(0, 0, 1440, 117, this, Qt::GlobalColor::darkMagenta);
+    ExternalNoTable = new RectangleShape(298, 214, 845, 597, this, Qt::GlobalColor::gray);
+    InternalNoTable = new RectangleShape(330, 240, 787, 545, this, Qt::GlobalColor::white);
 
-    NoTable = new TextLabel("There is no table yet...", 457, 305, 525, 61, 38, Qt::GlobalColor::lightGray, this);
+    NoTable = new TextLabel(457, 305, 525, 61, this, "There is no table yet...", 38, Qt::GlobalColor::lightGray);
 }
 
 SmartTables::~SmartTables()
@@ -19,10 +19,10 @@ SmartTables::~SmartTables()
 
 void SmartTables::paintEvent(QPaintEvent * event)
 {
-    TopBox->DrawShape();
+    TopBox->DrawItem();
 
-    ExternalNoTable->DrawShape();
-    InternalNoTable->DrawShape();
+    ExternalNoTable->DrawItem();
+    InternalNoTable->DrawItem();
 
-    NoTable->DrawLabel();
+    NoTable->DrawItem();
 }

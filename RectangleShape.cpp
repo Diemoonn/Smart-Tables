@@ -1,16 +1,16 @@
 #include "RectangleShape.h"
 
 RectangleShape::RectangleShape()
-	: m_width(0), m_height(0), m_x(0), m_y(0), m_color(Qt::GlobalColor::black), m_surface(nullptr), m_thickness(0)
+	: AbstractItem(0, 0, 0, 0, nullptr), m_color(Qt::GlobalColor::black), m_thickness(0)
 {
 }
 
-RectangleShape::RectangleShape(int width, int height, int x, int y, Qt::GlobalColor color, QMainWindow * surface, int thickness)
-	: m_width(width), m_height(height), m_x(x), m_y(y), m_color(color), m_surface(surface), m_thickness(thickness)
+RectangleShape::RectangleShape(int x, int y, int width, int height, QMainWindow * surface, Qt::GlobalColor color, int thickness)
+	: AbstractItem(x, y, width, height, surface), m_thickness(thickness), m_color(color)
 {
 }
 
-void RectangleShape::DrawShape()
+void RectangleShape::DrawItem()
 {
 	QPainter painter(m_surface);
 	painter.setRenderHint(QPainter::Antialiasing, true);

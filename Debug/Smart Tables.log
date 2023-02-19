@@ -1,5 +1,3 @@
-﻿  moc SmartTables.h
-  SmartTables.cpp
-  main.cpp
+﻿  TextLabel.cpp
   moc_SmartTables.cpp
   Smart Tables.vcxproj -> C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe

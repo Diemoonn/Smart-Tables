@@ -1,19 +1,17 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
+#include "AbstractItem.h"
 #include <qpainter.h>
 
-class RectangleShape
+class RectangleShape : public AbstractItem
 {
 public:
 	RectangleShape();
-	RectangleShape(int width, int height, int x, int y, Qt::GlobalColor m_color, QMainWindow * surface, int thickness = 5);
-	void DrawShape();
+	RectangleShape(int x, int y, int width, int height, QMainWindow * surface, Qt::GlobalColor m_color, int thickness = 5);
+	virtual void DrawItem();
 
 private:
-	int m_x, m_y;
-	int m_width, m_height, m_thickness;
+	int m_thickness;
 	Qt::GlobalColor m_color;
-	QMainWindow * m_surface;
 };
 

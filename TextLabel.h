@@ -1,20 +1,20 @@
+/*
+TODO: make TextLabel derived from AbstractItem
+*/
 #pragma once
 
 #include <qlabel.h>
-#include <QtWidgets/QMainWindow>
+#include "AbstractItem.h"
 
-class TextLabel
+class TextLabel : public AbstractItem
 {
 public:
 	TextLabel();
-	TextLabel(QString text, int x, int y, int width, int height, int fontSize, Qt::GlobalColor textColor, QMainWindow * surface);
-
-	void DrawLabel();
+	TextLabel(int x, int y, int width, int height, QMainWindow * surface, QString text, int fontSize, Qt::GlobalColor textColor);
+	virtual void DrawItem();
 
 private:
-	int m_x, m_y;
-	int m_fontSize, m_width, m_height;
-	QMainWindow * m_surface;
+	int m_fontSize;
 	QLabel * m_label;
 	QColor m_textColor;
 	QString m_text;
