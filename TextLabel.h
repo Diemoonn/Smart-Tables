@@ -1,6 +1,3 @@
-/*
-TODO: make TextLabel derived from AbstractItem
-*/
 #pragma once
 
 #include <qlabel.h>

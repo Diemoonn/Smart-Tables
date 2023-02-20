@@ -1,3 +1,9 @@
-﻿  TextLabel.cpp
+﻿  moc SmartTables.h
+  AbstractItem.cpp
+  CustomButton.cpp
+  RectangleShape.cpp
+  SmartTables.cpp
+  TextLabel.cpp
+  main.cpp
   moc_SmartTables.cpp
   Smart Tables.vcxproj -> C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe
