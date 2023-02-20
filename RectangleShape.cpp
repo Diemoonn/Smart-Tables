@@ -24,12 +24,4 @@ void RectangleShape::DrawItem()
 	painter.drawRect(m_x, m_y, m_width, m_height);
 }
 
-void RectangleShape::ResizeItem(float wK, float hK)
-{
-	m_x *= wK;
-	m_y *= hK;
-	m_width *= wK;
-	m_height *= hK;
-}
-
 
