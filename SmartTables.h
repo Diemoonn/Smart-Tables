@@ -5,6 +5,7 @@
 #include "ui_SmartTables.h"
 #include "RectangleShape.h"
 #include "CustomButton.h"
+#include "Table.h"
 
 class SmartTables : public QMainWindow
 {
@@ -15,13 +16,21 @@ public:
     ~SmartTables();
 
     virtual void paintEvent(QPaintEvent * event);
-    void resizeEvent(QResizeEvent * event);
 
 private:
+    void HideStartInterface();
+    void CreateNewTable();
+    void StartWork();
+
     Ui::SmartTablesClass ui; // idk what it is
+
+    bool DrawStartInterface;
 
     const int MAX_WIDTH = 1440, MAX_HEIGHT = 1024;
     const int MIN_WIDTH = 800, MIN_HEIHGT = 600;
+    const int TABLE_X = 82, TABLE_Y = 105, TABLE_W = 636, TABLE_H = 330;
+    const int BUTTON_SIZE = 50;
+    const int SPACE = 10;
 
     RectangleShape * TopBox;
     RectangleShape * ExternalNoTable;
@@ -30,6 +39,8 @@ private:
 
     TextLabel * NoTable;
 
-    CustomButton * NewColButton;
-    CustomButton * ProceedButton;
+    CustomButton * NewColButton, * ProceedButton;
+    CustomButton * AddRow, * AddCol, * RemoveRow, * RemoveCol;
+
+    Table * MainTable;
 };

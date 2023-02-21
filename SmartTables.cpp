@@ -17,8 +17,28 @@ SmartTables::SmartTables(QWidget *parent)
 
     NoTable = new TextLabel(150, 185, 528, 58, this, "There is no table yet...", 38, Qt::GlobalColor::lightGray);
 
-    NewColButton = new CustomButton(198, 346, 404, 66, this, "Add a new column");
+    NewColButton = new CustomButton(198, 346, 404, 66, this, "Add a new table");
+    connect(NewColButton->getButtonComponent(), &QPushButton::released, this, &SmartTables::StartWork);
+
     ProceedButton = new CustomButton(182, 531, 436, 49, this, "Proceed");
+
+    MainTable = new Table(TABLE_X, TABLE_Y, TABLE_W, TABLE_H, this);
+
+    AddRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y, BUTTON_SIZE, BUTTON_SIZE, this, "+R");
+    connect(AddRow->getButtonComponent(), &QPushButton::released, MainTable, &Table::AddRow);
+    AddCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "+C");
+    connect(AddCol->getButtonComponent(), &QPushButton::released, MainTable, &Table::AddCol);
+    RemoveRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 2 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-R");
+    connect(RemoveRow->getButtonComponent(), &QPushButton::released, MainTable, &Table::RemoveRow);
+    RemoveCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 3 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-C");
+    connect(RemoveCol->getButtonComponent(), &QPushButton::released, MainTable, &Table::RemoveCol);
+
+    AddRow->HideItem();
+    AddCol->HideItem();
+    RemoveRow->HideItem();
+    RemoveCol->HideItem();
+
+    DrawStartInterface = true;
 }
 
 SmartTables::~SmartTables()
@@ -32,20 +52,37 @@ void SmartTables::paintEvent(QPaintEvent * event)
     // layer 2
     TopBox->DrawItem();
 
-    // layer 3
-    ExternalNoTable->DrawItem();
-    InternalNoTable->DrawItem();
-
-    // layer 4
-    NoTable->DrawItem();
+    if (DrawStartInterface)
+    {
+        // layer 3
+        ExternalNoTable->DrawItem();
+        InternalNoTable->DrawItem();
+        
+        /* also NoTable text label is drawing here */
+    }
 }
 
-void SmartTables::resizeEvent(QResizeEvent * event)
+void SmartTables::StartWork()
 {
-    int w = this->geometry().width();
-    int h = this->geometry().height();
+    HideStartInterface();
+    CreateNewTable();
+}
 
-    /*new size / last size*/
+void SmartTables::HideStartInterface()
+{
+    DrawStartInterface = false;
 
-    QMainWindow::resizeEvent(event);
+    NoTable->HideItem();
+    NewColButton->HideItem();
+
+    repaint();
+}
+
+void SmartTables::CreateNewTable()
+{
+    MainTable->DrawItem();
+    AddRow->DrawItem();
+    AddCol->DrawItem();
+    RemoveRow->DrawItem();
+    RemoveCol->DrawItem();
 }

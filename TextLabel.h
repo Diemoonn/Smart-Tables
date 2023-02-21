@@ -8,7 +8,9 @@ class TextLabel : public AbstractItem
 public:
 	TextLabel();
 	TextLabel(int x, int y, int width, int height, QMainWindow * surface, QString text, int fontSize, Qt::GlobalColor textColor);
+
 	virtual void DrawItem();
+	virtual void HideItem();
 
 private:
 	int m_fontSize;

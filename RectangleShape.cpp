@@ -12,16 +12,21 @@ RectangleShape::RectangleShape(int x, int y, int width, int height, QMainWindow 
 
 void RectangleShape::DrawItem()
 {
-	QPainter painter(m_surface);
-	painter.setRenderHint(QPainter::Antialiasing, true);
-	painter.setBrush(QBrush(m_color));
+	m_painter = new QPainter(m_surface);
+	m_painter->setRenderHint(QPainter::Antialiasing, true);
+	m_painter->setBrush(QBrush(m_color));
 
 	QPen pen;
 	pen.setColor(m_color);
 	pen.setWidth(m_thickness);
 
-	painter.setPen(pen);
-	painter.drawRect(m_x, m_y, m_width, m_height);
+	m_painter->setPen(pen);
+	m_painter->drawRect(m_x, m_y, m_width, m_height);
+}
+
+void RectangleShape::HideItem()
+{
+	m_color = Qt::GlobalColor::white;
 }
 
 

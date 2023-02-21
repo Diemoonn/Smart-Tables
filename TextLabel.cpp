@@ -26,3 +26,8 @@ void TextLabel::DrawItem()
 	m_label->show();
 }
 
+void TextLabel::HideItem()
+{
+	m_label->hide();
+}
+

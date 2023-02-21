@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractItem.cpp" />
     <ClCompile Include="CustomButton.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="TextLabel.cpp" />
     <QtRcc Include="SmartTables.qrc" />
     <QtUic Include="SmartTables.ui" />
@@ -95,6 +96,7 @@
     <ClInclude Include="AbstractItem.h" />
     <ClInclude Include="CustomButton.h" />
     <ClInclude Include="RectangleShape.h" />
+    <ClInclude Include="Table.h" />
     <ClInclude Include="TextLabel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
