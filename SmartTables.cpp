@@ -20,8 +20,6 @@ SmartTables::SmartTables(QWidget *parent)
     NewColButton = new CustomButton(198, 346, 404, 66, this, "Add a new table");
     connect(NewColButton->getButtonComponent(), &QPushButton::released, this, &SmartTables::StartWork);
 
-    ProceedButton = new CustomButton(182, 531, 436, 49, this, "Proceed");
-
     MainTable = new Table(TABLE_X, TABLE_Y, TABLE_W, TABLE_H, this);
 
     AddRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y, BUTTON_SIZE, BUTTON_SIZE, this, "+R");
@@ -32,6 +30,9 @@ SmartTables::SmartTables(QWidget *parent)
     connect(RemoveRow->getButtonComponent(), &QPushButton::released, MainTable, &Table::RemoveRow);
     RemoveCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 3 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-C");
     connect(RemoveCol->getButtonComponent(), &QPushButton::released, MainTable, &Table::RemoveCol);
+
+    ProceedButton = new CustomButton(182, 531, 436, 49, this, "Proceed");
+    connect(ProceedButton->getButtonComponent(), &QPushButton::released, MainTable, &Table::ProceedTable);
 
     AddRow->HideItem();
     AddCol->HideItem();
@@ -80,6 +81,7 @@ void SmartTables::HideStartInterface()
 
 void SmartTables::CreateNewTable()
 {
+    MainTable->AddCol();
     MainTable->DrawItem();
     AddRow->DrawItem();
     AddCol->DrawItem();

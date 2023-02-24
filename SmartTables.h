@@ -22,7 +22,7 @@ private:
     void CreateNewTable();
     void StartWork();
 
-    Ui::SmartTablesClass ui; // idk what it is
+    Ui::SmartTablesClass ui;
 
     bool DrawStartInterface;
 
