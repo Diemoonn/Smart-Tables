@@ -30,11 +30,8 @@ void Table::AddRow()
 
 	for (int i = 0; i < m_table->columnCount(); i++)
 	{
-		/*
-		QLineEdit *edit = new QLineEdit(m_table);
-		edit->setValidator(new QDoubleValidator(edit));
-		*/
 		QDoubleSpinBox * edit = new QDoubleSpinBox(m_table);
+		edit->setDecimals(10);
 
 		m_table->setCellWidget(m_table->rowCount() - 1, i, edit);
 	}
@@ -51,11 +48,8 @@ void Table::AddCol()
 
 	for (int i = 0; i < m_table->rowCount(); i++)
 	{
-		/*
-		QLineEdit *edit = new QLineEdit(m_table);
-		edit->setValidator(new QDoubleValidator(edit));
-		*/
 		QDoubleSpinBox * edit = new QDoubleSpinBox(m_table);
+		edit->setDecimals(10);
 
 		m_table->setCellWidget(i, m_table->columnCount() - 1, edit);
 	}
@@ -71,14 +65,10 @@ void Table::RemoveCol()
 	m_table->removeColumn(m_table->columnCount() - 1);
 }
 
-void Table::ProceedTable()
-{	
-	int n = m_table->rowCount();
-	double instrumentError = QInputDialog::getDouble(m_surface, "Instrument error", "Enter an instument error", 0.0, DBL_MIN, DBL_MAX, 10);
-	double confidLevel = QInputDialog::getDouble(m_surface, "Confidential level", "Enter a confidential level", 0.0, DBL_MIN, DBL_MAX, 10);
-	double student = 1;
-
-	// calculating a student koeff
+double Table::GetStudent(int n, double confidLevel)
+{
+	double student = 0.0;
+	
 	if (confidLevel == 0.9)
 	{
 		switch (n)
@@ -116,39 +106,66 @@ void Table::ProceedTable()
 		}
 	}
 
-	// calculating a middle value
-	int columnNum = 0;
-	double middleValue = 0.0;
-	for (int i = 0; i < n; i++)
-		middleValue += GetCellValue(i, columnNum);
-	middleValue /= n;
+	return student;
+}
 
-	// calculating a standart error
-	double deltaSum = 0.0;
-	for (int i = 0; i < n; i++)
-		deltaSum += pow(GetCellValue(i, columnNum) - middleValue, 2);
-
-	double standartError = sqrt(deltaSum / n * (n - 1));
-
-	// calculating an absolute error
-	double absoluteError = sqrt(pow(student * standartError, 2) + pow(instrumentError, 2));
-
-	// TODO: display confidence interval in the end of calculations
-
-	// calculating a relative error
-	double relativeError = (absoluteError / middleValue) * 100;
-
-	// TODO: display all calculated values in the additional window
-
+void Table::ProceedTable()
+{	
 	using namespace std;
-	ofstream fout("result.txt");
-	fout << "======\nValue: " << m_table->horizontalHeaderItem(columnNum)->text().toStdString()
-		<< "\nInstrument error: " << instrumentError << "\nConfidence level: " << confidLevel
-		<< "\nStudent koeff: " << student << "\nMiddle value: " << middleValue
-		<< "\nRandom error: " << standartError << "\nAbsolute error: " << absoluteError
-		<< "\nRelative error: " << relativeError << "\nFinal value: " << middleValue
-		<< " +- " << absoluteError << endl;
-	fout.close();
 	
-	QMessageBox::information(m_surface, "Result", "Check out result.txt for calculation results");
+	int columnNum;
+	int n = m_table->rowCount();
+	double instrumentError, confidLevel, student;
+	double middleValue, deltaSum, standartError, randomError, absoluteError, relativeError;
+
+	ofstream fout("result.txt");
+
+	for (int column = 0; column < m_table->columnCount(); column++)
+	{
+		columnNum = column;
+		instrumentError = QInputDialog::getDouble(m_surface, "Instrument error", "Enter an instument error", 0.0, DBL_MIN, DBL_MAX, 10);
+		confidLevel = QInputDialog::getDouble(m_surface, "Confidential level", "Enter a confidential level", 0.0, DBL_MIN, DBL_MAX, 10);
+
+		// calculating a student koeff
+		student = GetStudent(n, confidLevel);
+
+		// calculating a middle value
+		middleValue = 0.0;
+		for (int i = 0; i < n; i++)
+			middleValue += GetCellValue(i, columnNum);
+		middleValue /= n;
+
+		// calculating a standart error
+		deltaSum = 0.0;
+		for (int i = 0; i < n; i++)
+			deltaSum += pow(GetCellValue(i, columnNum) - middleValue, 2);
+
+		standartError = sqrt(deltaSum / (n * (n - 1)));
+
+		// calculating a random error
+		randomError = student * standartError;
+
+		// calculating an absolute error
+		absoluteError = sqrt(pow(student * standartError, 2) + pow(instrumentError, 2));
+
+		// TODO: display confidence interval in the end of calculations
+
+		// calculating a relative error
+		relativeError = (absoluteError / middleValue) * 100;
+
+		// TODO: display all calculated values in the additional window
+
+		fout << "======\nValue: " << m_table->horizontalHeaderItem(columnNum)->text().toStdString()
+			<< "\nInstrument error: " << instrumentError << "\nConfidence level: " << confidLevel
+			<< "\nStudent koeff: " << student << "\nMiddle value: " << middleValue
+			<< "\nStandart error: " << "sqrt(" << deltaSum << " / " << n << " * " << n - 1 << ") = " << standartError
+			<< "\nRadom error: " << randomError
+			<< "\nAbsolute error: " << "sqrt(pow(" << student << " * " << standartError << ", 2) + pow(" << instrumentError << ", 2)) = " << absoluteError
+			<< "\nRelative error: " << relativeError << "\nFinal value: " << middleValue
+			<< " +- " << absoluteError << endl;
+
+		QMessageBox::information(m_surface, "Result", "Check out result.txt for calculation results");
+	}
+
+	fout.close();
 }

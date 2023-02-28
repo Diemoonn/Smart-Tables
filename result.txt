@@ -1,10 +1,22 @@
 ======
 Value: l1
-Instrument error: 0.09
-Confidence level: 0.01
-Student koeff: 1
-Middle value: 1.1
-Random error: 6.66134e-16
-Absolute error: 0.09
-Relative error: 8.18182
-Final value: 1.1 +- 0.09
+Instrument error: 0.001
+Confidence level: 0.9
+Student koeff: 1.83
+Middle value: 1.788
+Standart error: sqrt(0.11216 / 10 * 9) = 0.0353019
+Radom error: 0.0646024
+Absolute error: sqrt(pow(1.83 * 0.0353019, 2) + pow(0.001, 2)) = 0.0646102
+Relative error: 3.61354
+Final value: 1.788 +- 0.0646102
+======
+Value: l2
+Instrument error: 0.001
+Confidence level: 0.9
+Student koeff: 1.83
+Middle value: 0.696
+Standart error: sqrt(0.01104 / 10 * 9) = 0.0110755
+Radom error: 0.0202682
+Absolute error: sqrt(pow(1.83 * 0.0110755, 2) + pow(0.001, 2)) = 0.0202928
+Relative error: 2.91563
+Final value: 0.696 +- 0.0202928

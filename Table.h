@@ -24,12 +24,11 @@ public:
 
 private:
 	inline double GetCellValue(int row, int col) 
-	//{ return qobject_cast<QLineEdit*>(m_table->cellWidget(row, col))->text().toDouble(); }
 	{ return qobject_cast<QDoubleSpinBox*>(m_table->cellWidget(row, col))->value(); }
 
+	double GetStudent(int n, double confidLevel);
+
 	int m_rows, m_cols;
-	const int BUTTON_SIZE = 50;
-	const int SPACE = 10;
 	QTableWidget * m_table;
 };
 
