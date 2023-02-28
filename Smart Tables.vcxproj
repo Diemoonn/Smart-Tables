@@ -96,8 +96,12 @@
     <ClInclude Include="AbstractItem.h" />
     <ClInclude Include="CustomButton.h" />
     <ClInclude Include="RectangleShape.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="TextLabel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Smart Tables.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

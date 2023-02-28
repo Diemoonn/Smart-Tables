@@ -21,6 +21,7 @@ private:
     void HideStartInterface();
     void CreateNewTable();
     void StartWork();
+    void Proceed();
 
     Ui::SmartTablesClass ui;
 
