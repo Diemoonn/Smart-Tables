@@ -1,10 +1,10 @@
 ======
 Value: l1
-Instrument error: 0.0001
-Confidence level: 0.9
-Student koeff: 1.94
-Middle value: 0
-Random error: 0
-Absolute error: 0.0001
-Relative error: inf
-Final value: 0 +- 0.0001
+Instrument error: 0.09
+Confidence level: 0.01
+Student koeff: 1
+Middle value: 1.1
+Random error: 6.66134e-16
+Absolute error: 0.09
+Relative error: 8.18182
+Final value: 1.1 +- 0.09

@@ -30,8 +30,11 @@ void Table::AddRow()
 
 	for (int i = 0; i < m_table->columnCount(); i++)
 	{
+		/*
 		QLineEdit *edit = new QLineEdit(m_table);
 		edit->setValidator(new QDoubleValidator(edit));
+		*/
+		QDoubleSpinBox * edit = new QDoubleSpinBox(m_table);
 
 		m_table->setCellWidget(m_table->rowCount() - 1, i, edit);
 	}
@@ -48,8 +51,11 @@ void Table::AddCol()
 
 	for (int i = 0; i < m_table->rowCount(); i++)
 	{
+		/*
 		QLineEdit *edit = new QLineEdit(m_table);
 		edit->setValidator(new QDoubleValidator(edit));
+		*/
+		QDoubleSpinBox * edit = new QDoubleSpinBox(m_table);
 
 		m_table->setCellWidget(i, m_table->columnCount() - 1, edit);
 	}
