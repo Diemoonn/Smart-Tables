@@ -1,8 +1,8 @@
-﻿  RectangleShape.cpp
+﻿  moc ResultWindow.h
+  ResultWindow.cpp
   SmartTables.cpp
   Table.cpp
-  TextLabel.cpp
   main.cpp
+  moc_ResultWindow.cpp
   moc_SmartTables.cpp
-  LINK : не найден или не выполнена сборка C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe при последней инкрементной компоновке; выполняется полная компоновка
   Smart Tables.vcxproj -> C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe

@@ -1,5 +1,6 @@
 #include <fstream>
 #include <limits.h>
+#include <vector>
 #include "Table.h"
 
 Table::Table(int x, int y, int width, int height, QMainWindow * surface, int rows, int columns)
@@ -113,12 +114,14 @@ void Table::ProceedTable()
 {	
 	using namespace std;
 	
-	int columnNum;
+	int columnNum = 0;
 	int n = m_table->rowCount();
 	double instrumentError, confidLevel, student;
 	double middleValue, deltaSum, standartError, randomError, absoluteError, relativeError;
 
 	ofstream fout("result.txt");
+
+	m_result = new ResultWindow;
 
 	for (int column = 0; column < m_table->columnCount(); column++)
 	{
@@ -163,6 +166,18 @@ void Table::ProceedTable()
 			<< "\nAbsolute error: " << "sqrt(pow(" << student << " * " << standartError << ", 2) + pow(" << instrumentError << ", 2)) = " << absoluteError
 			<< "\nRelative error: " << relativeError << "\nFinal value: " << middleValue
 			<< " +- " << absoluteError << endl;
+
+		vector<double> data; // temporary vector
+		data.push_back(instrumentError);
+		data.push_back(confidLevel);
+		data.push_back(student);
+		data.push_back(middleValue);
+		data.push_back(standartError);
+		data.push_back(randomError);
+		data.push_back(absoluteError);
+		data.push_back(relativeError);
+
+		m_result->ParseData(m_table->horizontalHeaderItem(columnNum)->text().toStdString(), data);
 
 		QMessageBox::information(m_surface, "Result", "Check out result.txt for calculation results");
 	}

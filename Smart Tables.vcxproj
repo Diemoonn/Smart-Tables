@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClCompile Include="AbstractItem.cpp" />
     <ClCompile Include="CustomButton.cpp" />
+    <ClCompile Include="ResultWindow.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="TextLabel.cpp" />
     <QtRcc Include="SmartTables.qrc" />
@@ -97,6 +98,7 @@
     <ClInclude Include="CustomButton.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="resource.h" />
+    <QtMoc Include="ResultWindow.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="TextLabel.h" />
   </ItemGroup>

@@ -1,11 +1,22 @@
 ======
-Value: j
+Value: a
 Instrument error: 1
-Confidence level: 1
-Student koeff: 0
-Middle value: 2.83333
-Standart error: sqrt(10.8333 / 6 * 5) = 0.600925
-Radom error: 0
-Absolute error: sqrt(pow(0 * 0.600925, 2) + pow(1, 2)) = 1
-Relative error: 35.2941
-Final value: 2.83333 +- 1
+Confidence level: 0.9
+Student koeff: 2.13
+Middle value: 1.4
+Standart error: sqrt(39.2 / 5 * 4) = 1.4
+Radom error: 2.982
+Absolute error: sqrt(pow(2.13 * 1.4, 2) + pow(1, 2)) = 3.14521
+Relative error: 224.658
+Final value: 1.4 +- 3.14521
+======
+Value: b
+Instrument error: 1
+Confidence level: 0.9
+Student koeff: 2.13
+Middle value: 3.6
+Standart error: sqrt(259.2 / 5 * 4) = 3.6
+Radom error: 7.668
+Absolute error: sqrt(pow(2.13 * 3.6, 2) + pow(1, 2)) = 7.73293
+Relative error: 214.804
+Final value: 3.6 +- 7.73293

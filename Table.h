@@ -7,6 +7,7 @@
 #include <qdoublespinbox>
 #include <cmath>
 #include "AbstractItem.h"
+#include "ResultWindow.h"
 
 class Table : public AbstractItem
 {
@@ -29,6 +30,9 @@ private:
 	double GetStudent(int n, double confidLevel);
 
 	int m_rows, m_cols;
+
 	QTableWidget * m_table;
+
+	ResultWindow * m_result;
 };
 

@@ -12,6 +12,9 @@ public:
 	virtual void DrawItem();
 	virtual void HideItem();
 
+	QLabel * getLabelComponent()
+	{ return m_label;}
+
 private:
 	int m_fontSize;
 	QLabel * m_label;
