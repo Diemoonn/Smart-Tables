@@ -11,15 +11,25 @@ ResultWindow::ResultWindow(int columns, QWidget * parent)
 
 	m_ValueLabel = new TextLabel(282, 32, 235, 68, this, "", 40, Qt::GlobalColor::white);
 
-	m_InstrumentError = new TextLabel(28, 132, 357, 68, this, "", 40, Qt::GlobalColor::black);
-	m_ConfidenceLevel = new TextLabel(28, 232, 357, 68, this, "", 40, Qt::GlobalColor::black);
-	m_StudentKoeff = new TextLabel(28, 332, 357, 68, this, "", 40, Qt::GlobalColor::black);
-	m_MiddleValue = new TextLabel(28, 432, 357, 68, this, "", 40, Qt::GlobalColor::black);
+	m_InstrumentError = new TextLabel(28, 132, 210, 44, this, "Instrument error: ", 20, Qt::GlobalColor::black);
+	m_ConfidenceLevel = new TextLabel(28, 232, 210, 44, this, "Confidence level: ", 20, Qt::GlobalColor::black);
+	m_StudentKoeff = new TextLabel(28, 332, 210, 44, this, "Student koeff: ", 20, Qt::GlobalColor::black);
+	m_MiddleValue = new TextLabel(28, 432, 210, 44, this, "Middle value: ", 20, Qt::GlobalColor::black);
 
-	m_StandartError = new TextLabel(415, 132, 357, 68, this, "", 40, Qt::GlobalColor::black);
-	m_RandomError = new TextLabel(415, 232, 357, 68, this, "", 40, Qt::GlobalColor::black);
-	m_AbsoluteError = new TextLabel(415, 332, 357, 68, this, "", 40, Qt::GlobalColor::black);
-	m_RelativeError = new TextLabel(415, 432, 357, 68, this, "", 40, Qt::GlobalColor::black);
+	m_StandartError = new TextLabel(415, 132, 210, 44, this, "Standart error: ", 20, Qt::GlobalColor::black);
+	m_RandomError = new TextLabel(415, 232, 210, 44, this, "Random error: ", 20, Qt::GlobalColor::black);
+	m_AbsoluteError = new TextLabel(415, 332, 210, 44, this, "Absolute error: ", 20, Qt::GlobalColor::black);
+	m_RelativeError = new TextLabel(415, 432, 210, 44, this, "Relative error: ", 20, Qt::GlobalColor::black);
+
+	m_result1 = new TextLabel(240, 132, 113, 44, this, "", 20, Qt::GlobalColor::black);
+	m_result2 = new TextLabel(240, 232, 113, 44, this, "", 20, Qt::GlobalColor::black);
+	m_result3 = new TextLabel(240, 332, 113, 44, this, "", 20, Qt::GlobalColor::black);
+	m_result4 = new TextLabel(240, 432, 113, 44, this, "", 20, Qt::GlobalColor::black);
+
+	m_result5 = new TextLabel(613, 132, 113, 44, this, "", 20, Qt::GlobalColor::black);
+	m_result6 = new TextLabel(613, 232, 113, 44, this, "", 20, Qt::GlobalColor::black);
+	m_result7 = new TextLabel(613, 332, 113, 44, this, "", 20, Qt::GlobalColor::black);
+	m_result8 = new TextLabel(613, 432, 113, 44, this, "", 20, Qt::GlobalColor::black);
 
 	m_valueCount = 0;
 	m_globalIter = 0;
@@ -72,12 +82,12 @@ void ResultWindow::Setup(int i)
 {
 	m_ValueLabel->getLabelComponent()->setText(QString::fromStdString(m_valueNames[i]));
 
-	m_InstrumentError->getLabelComponent()->setText(QString::number(m_data[i][0]));
-	m_ConfidenceLevel->getLabelComponent()->setText(QString::number(m_data[i][1]));
-	m_StudentKoeff->getLabelComponent()->setText(QString::number(m_data[i][2]));
-	m_MiddleValue->getLabelComponent()->setText(QString::number(m_data[i][3]));
-	m_StandartError->getLabelComponent()->setText(QString::number(m_data[i][4]));
-	m_RandomError->getLabelComponent()->setText(QString::number(m_data[i][5]));
-	m_AbsoluteError->getLabelComponent()->setText(QString::number(m_data[i][6]));
-	m_RelativeError->getLabelComponent()->setText(QString::number(m_data[i][7]));
+	m_result1->getLabelComponent()->setText(QString::number(m_data[i][0]));
+	m_result2->getLabelComponent()->setText(QString::number(m_data[i][1]));
+	m_result3->getLabelComponent()->setText(QString::number(m_data[i][2]));
+	m_result4->getLabelComponent()->setText(QString::number(m_data[i][3]));
+	m_result5->getLabelComponent()->setText(QString::number(m_data[i][4]));
+	m_result6->getLabelComponent()->setText(QString::number(m_data[i][5]));
+	m_result7->getLabelComponent()->setText(QString::number(m_data[i][6]));
+	m_result8->getLabelComponent()->setText(QString::number(m_data[i][7]));
 }

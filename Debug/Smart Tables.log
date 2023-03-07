@@ -1,8 +1,2 @@
-﻿  moc ResultWindow.h
-  ResultWindow.cpp
-  SmartTables.cpp
-  Table.cpp
-  main.cpp
-  moc_ResultWindow.cpp
-  moc_SmartTables.cpp
+﻿  ResultWindow.cpp
   Smart Tables.vcxproj -> C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe

@@ -40,5 +40,10 @@ private:
 		* m_MiddleValue, * m_StandartError,
 		* m_RandomError, * m_AbsoluteError,
 		* m_RelativeError;
+
+	TextLabel * m_result1, * m_result2, 
+		* m_result3, * m_result4, 
+		* m_result5, * m_result6,
+		* m_result7, * m_result8;
 };
 
