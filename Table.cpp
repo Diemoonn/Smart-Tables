@@ -2,6 +2,7 @@
 #include <limits.h>
 #include <vector>
 #include "Table.h"
+#include "stringProcessor.h"
 
 Table::Table(int x, int y, int width, int height, QMainWindow * surface, int rows, int columns)
 	: AbstractItem(x, y, width, height, surface), m_rows(rows), m_cols(columns)
@@ -40,7 +41,7 @@ void Table::AddRow()
 
 void Table::AddCol()
 {
-	QString columnName = QInputDialog::getText(m_surface, "New column", "Enter new column name");
+	QString columnName = QInputDialog::getText(m_surface, text(8), text(9));
 	if (columnName.isEmpty())
 		return;
 
@@ -126,8 +127,8 @@ void Table::ProceedTable()
 	for (int column = 0; column < m_table->columnCount(); column++)
 	{
 		columnNum = column;
-		instrumentError = QInputDialog::getDouble(m_surface, "Instrument error", "Enter an instument error", 0.0, DBL_MIN, DBL_MAX, 10);
-		confidLevel = QInputDialog::getDouble(m_surface, "Confidential level", "Enter a confidential level", 0.0, DBL_MIN, DBL_MAX, 10);
+		instrumentError = QInputDialog::getDouble(m_surface, text(10), text(11), 0.0, DBL_MIN, DBL_MAX, 10);
+		confidLevel = QInputDialog::getDouble(m_surface, text(12), text(13), 0.0, DBL_MIN, DBL_MAX, 10);
 
 		// calculating a student koeff
 		student = GetStudent(n, confidLevel);
@@ -151,13 +152,12 @@ void Table::ProceedTable()
 		// calculating an absolute error
 		absoluteError = sqrt(pow(student * standartError, 2) + pow(instrumentError, 2));
 
-		// TODO: display confidence interval in the end of calculations
+		// TODO: display confidence interval in the end of calculations 
 
 		// calculating a relative error
 		relativeError = (absoluteError / middleValue) * 100;
 
-		// TODO: display all calculated values in the additional window
-
+		// this is 'debug only' stuff
 		fout << "======\nValue: " << m_table->horizontalHeaderItem(columnNum)->text().toStdString()
 			<< "\nInstrument error: " << instrumentError << "\nConfidence level: " << confidLevel
 			<< "\nStudent koeff: " << student << "\nMiddle value: " << middleValue
@@ -167,7 +167,8 @@ void Table::ProceedTable()
 			<< "\nRelative error: " << relativeError << "\nFinal value: " << middleValue
 			<< " +- " << absoluteError << endl;
 
-		vector<double> data; // temporary vector
+		// temporary vector
+		vector<double> data; 
 		data.push_back(instrumentError);
 		data.push_back(confidLevel);
 		data.push_back(student);
@@ -179,7 +180,7 @@ void Table::ProceedTable()
 
 		m_result->ParseData(m_table->horizontalHeaderItem(columnNum)->text().toStdString(), data);
 
-		QMessageBox::information(m_surface, "Result", "Check out result.txt for calculation results");
+		QMessageBox::information(m_surface, text(14), text(15));
 	}
 
 	fout.close();

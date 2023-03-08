@@ -1,25 +1,26 @@
 #include "ResultWindow.h"
+#include "stringProcessor.h"
 
 ResultWindow::ResultWindow(int columns, QWidget * parent)
 	: QMainWindow(parent)
 {
 	setFixedSize(MIN_WIDTH, MIN_HEIGHT);
-	setWindowTitle("Results");
+	setWindowTitle(text(16));
 
-	m_PrevButton = new CustomButton(28, 520, 110, 68, this, "Prev");
-	m_NextButton = new CustomButton(659, 520, 113, 68, this, "Next");
+	m_PrevButton = new CustomButton(28, 520, 110, 68, this, text(17));
+	m_NextButton = new CustomButton(659, 520, 113, 68, this, text(18));
 
 	m_ValueLabel = new TextLabel(282, 32, 235, 68, this, "", 40, Qt::GlobalColor::white);
 
-	m_InstrumentError = new TextLabel(28, 132, 210, 44, this, "Instrument error: ", 20, Qt::GlobalColor::black);
-	m_ConfidenceLevel = new TextLabel(28, 232, 210, 44, this, "Confidence level: ", 20, Qt::GlobalColor::black);
-	m_StudentKoeff = new TextLabel(28, 332, 210, 44, this, "Student koeff: ", 20, Qt::GlobalColor::black);
-	m_MiddleValue = new TextLabel(28, 432, 210, 44, this, "Middle value: ", 20, Qt::GlobalColor::black);
+	m_InstrumentError = new TextLabel(28, 132, 210, 44, this, text(19), 10, Qt::GlobalColor::black);
+	m_ConfidenceLevel = new TextLabel(28, 232, 210, 44, this, text(20), 10, Qt::GlobalColor::black);
+	m_StudentKoeff = new TextLabel(28, 332, 210, 44, this, text(21), 10, Qt::GlobalColor::black);
+	m_MiddleValue = new TextLabel(28, 432, 210, 44, this, text(22), 10, Qt::GlobalColor::black);
 
-	m_StandartError = new TextLabel(415, 132, 210, 44, this, "Standart error: ", 20, Qt::GlobalColor::black);
-	m_RandomError = new TextLabel(415, 232, 210, 44, this, "Random error: ", 20, Qt::GlobalColor::black);
-	m_AbsoluteError = new TextLabel(415, 332, 210, 44, this, "Absolute error: ", 20, Qt::GlobalColor::black);
-	m_RelativeError = new TextLabel(415, 432, 210, 44, this, "Relative error: ", 20, Qt::GlobalColor::black);
+	m_StandartError = new TextLabel(415, 132, 210, 44, this, text(23), 10, Qt::GlobalColor::black);
+	m_RandomError = new TextLabel(415, 232, 210, 44, this, text(24), 10, Qt::GlobalColor::black);
+	m_AbsoluteError = new TextLabel(415, 332, 210, 44, this, text(25), 10, Qt::GlobalColor::black);
+	m_RelativeError = new TextLabel(415, 432, 210, 44, this, text(26), 10, Qt::GlobalColor::black);
 
 	m_result1 = new TextLabel(240, 132, 113, 44, this, "", 20, Qt::GlobalColor::black);
 	m_result2 = new TextLabel(240, 232, 113, 44, this, "", 20, Qt::GlobalColor::black);
@@ -60,7 +61,7 @@ void ResultWindow::ParseData(std::string value, std::vector<double> results)
 	Setup();
 }
 
-void ResultWindow::Next() //TODO: твоя мать - недопустимый параметр функции
+void ResultWindow::Next()
 {
 	if (m_globalIter >= m_valueCount - 1)
 		return;
