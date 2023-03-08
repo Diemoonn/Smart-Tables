@@ -15,6 +15,7 @@ TextLabel::TextLabel(int x, int y, int width, int height, QMainWindow * surface,
 
 	QFont font = m_label->font();
 	font.setPointSize(m_fontSize);
+	//QFont font("Arial", m_fontSize);
 	m_label->setFont(font);
 
 	QString format("<font color='%1'>" + m_text + "</font>");

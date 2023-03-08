@@ -5,9 +5,6 @@ SmartTables::SmartTables(QWidget *parent)
 {
     ui.setupUi(this);
 
-    // setMinimumSize(MIN_WIDTH, MIN_HEIHGT);
-    // setMaximumSize(MAX_WIDTH, MAX_HEIGHT);
-    // resize(MIN_WIDTH, MIN_HEIHGT);
     setFixedSize(MIN_WIDTH, MIN_HEIHGT);
 
     TopBox = new RectangleShape(0, 0, 800, 71, this, Qt::GlobalColor::darkMagenta);
@@ -15,20 +12,20 @@ SmartTables::SmartTables(QWidget *parent)
     InternalNoTable = new RectangleShape(99, 165, 603, 279, this, Qt::GlobalColor::white);
     BackgroungBox = new RectangleShape(0, 0, MAX_WIDTH, MAX_HEIGHT, this, Qt::GlobalColor::white);
 
-    NoTable = new TextLabel(150, 185, 528, 58, this, "There is no table yet...", 38, Qt::GlobalColor::lightGray);
+    NoTable = new TextLabel(150, 185, 528, 58, this, uni("Таблиц пока нет..."), 38, Qt::GlobalColor::lightGray);
 
-    NewColButton = new CustomButton(198, 346, 404, 66, this, "Add a new table");
+    NewColButton = new CustomButton(198, 346, 404, 66, this, uni("Создать новую таблицу")); // TODO: парсить весь текст из txt файла
     connect(NewColButton->getButtonComponent(), &QPushButton::released, this, &SmartTables::StartWork);
 
     MainTable = new Table(TABLE_X, TABLE_Y, TABLE_W, TABLE_H, this);
 
-    AddRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y, BUTTON_SIZE, BUTTON_SIZE, this, "+R");
+    AddRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y, BUTTON_SIZE, BUTTON_SIZE, this, "+Р");
     connect(AddRow->getButtonComponent(), &QPushButton::released, MainTable, &Table::AddRow);
-    AddCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "+C");
+    AddCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "+К");
     connect(AddCol->getButtonComponent(), &QPushButton::released, MainTable, &Table::AddCol);
-    RemoveRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 2 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-R");
+    RemoveRow = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 2 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-Р");
     connect(RemoveRow->getButtonComponent(), &QPushButton::released, MainTable, &Table::RemoveRow);
-    RemoveCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 3 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-C");
+    RemoveCol = new CustomButton(TABLE_X - (BUTTON_SIZE + SPACE), TABLE_Y + 3 * (BUTTON_SIZE + SPACE), BUTTON_SIZE, BUTTON_SIZE, this, "-К");
     connect(RemoveCol->getButtonComponent(), &QPushButton::released, MainTable, &Table::RemoveCol);
 
     ProceedButton = new CustomButton(182, 531, 436, 49, this, "Proceed");
@@ -59,7 +56,7 @@ void SmartTables::paintEvent(QPaintEvent * event)
         ExternalNoTable->DrawItem();
         InternalNoTable->DrawItem();
         
-        /* also NoTable text label is drawing here */
+        /* NoTable text label is also drawing here */
     }
 }
 

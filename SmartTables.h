@@ -22,6 +22,8 @@ private:
     void CreateNewTable();
     void StartWork();
     void Proceed();
+    
+    inline QString uni(const char * text) { return QString::fromLocal8Bit(text); } // unicode convertion method
 
     Ui::SmartTablesClass ui;
 

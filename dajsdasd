@@ -1,0 +1,65 @@
+[33mcommit 549e004872556ed44d21e8ba1ed20a3f42e2298e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/experimental[m[33m, [m[1;32mexperimental[m[33m)[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Tue Feb 28 20:09:24 2023 +0300
+
+    All basic features have been added. UML still has no updates
+
+[33mcommit b20bf537c02e19a533b7ad47d72150dbd18557dc[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Tue Feb 28 19:56:35 2023 +0300
+
+    All basic functions have been added, prerelease version
+
+[33mcommit 05d6fd83eea9552a448a3dc3803bee2d78a47135[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Tue Feb 28 17:15:21 2023 +0300
+
+    QLineEdit widgets in table sells were replaced by QDoubleSpinBox
+
+[33mcommit 693397344e5dc72b3e77f5cc83a66145064fca38[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Tue Feb 28 16:54:44 2023 +0300
+
+    First commit to the new experimental branch
+
+[33mcommit 4f2a7527f5b69da9eff9fb5eab6856449dc1547d[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Fri Feb 24 22:51:19 2023 +0300
+
+    Table have full functional in input/output now. UML still hasn't updated
+
+[33mcommit 1df842f831fa7ca361a971181a9c8353023ffaf2[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Tue Feb 21 23:31:46 2023 +0300
+
+    Has been added non-functional tabel template. UML has no any updates yet.
+
+[33mcommit c33e5911628b08a2950e3e94b0e70a705f97d590[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Mon Feb 20 23:41:54 2023 +0300
+
+    UML has been updated due to recent code updates
+
+[33mcommit 6fe334a6231ff951cc61d1744f851a0154569b60[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Mon Feb 20 23:30:21 2023 +0300
+
+    Has been added CustomButton class for representing buttons. Fixed window design. UML hasn't been updated yet
+
+[33mcommit 3a68df702cb659fb81381a9c2e790663fe2416b0[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Sun Feb 19 13:52:58 2023 +0300
+
+    Has been added new interface for RectangleShape and TextLabel - AbstractItem
+
+[33mcommit 8e9abde53810d9c01a41a18bf578703002862661[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Sat Feb 18 21:08:55 2023 +0300
+
+    UML file has been updated
+
+[33mcommit 0c74c045fa4bd3f275faf0a1cd9dc56a037e1336[m
+Author: Diemoon <gordienko.gordienkodima2004@yandex.ru>
+Date:   Fri Feb 17 23:37:48 2023 +0300
+
+    First commit on Smart Tables
