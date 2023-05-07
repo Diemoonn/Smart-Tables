@@ -3,10 +3,6 @@
 #include "AbstractItem.h"
 #include <qpushbutton.h>
 
-/*
-TODO: make QPushButton a part of CustomButton
-*/
-
 class CustomButton : AbstractItem
 {
 public:

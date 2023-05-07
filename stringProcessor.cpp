@@ -1,7 +1,7 @@
 #include "stringProcessor.h"
 #include <fstream>
 
-std::string lang = "C:/Coding/cpp projects/Smart Tables/Resources/lang/rus.txt";
+std::string lang = "Resources/lang/rus.txt";
 
 std::string parseText(int stringNum, std::string path)
 {

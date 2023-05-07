@@ -30,7 +30,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Diemoon\AppData\Local\Temp\aebspjq1.1lr;C:\Qt\Qt5.7.0\5.7\msvc2015\include;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtWidgets;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtGui;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtANGLE;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtCore;C:\Users\Diemoon\AppData\Local\Temp\aebspjq1.1lr;C:\Qt\Qt5.7.0\5.7\msvc2015\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Diemoon\AppData\Local\Temp\5sm2aqza.prz;C:\Qt\Qt5.7.0\5.7\msvc2015\include;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtWidgets;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtGui;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtANGLE;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtCore;C:\Users\Diemoon\AppData\Local\Temp\5sm2aqza.prz;C:\Qt\Qt5.7.0\5.7\msvc2015\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-FS -Zc:strictStrings -Zc:throwingNew %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>

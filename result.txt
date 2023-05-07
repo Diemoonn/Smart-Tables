@@ -1,11 +1,22 @@
 ======
-Value: l
-Instrument error: 0
-Confidence level: 0
+Value: t
+Instrument error: 2
+Confidence level: 0.09
 Student koeff: 0
-Middle value: 0
-Standart error: sqrt(0 / 1 * 0) = -nan(ind)
-Radom error: -nan(ind)
-Absolute error: sqrt(pow(0 * -nan(ind), 2) + pow(0, 2)) = -nan(ind)
-Relative error: -nan(ind)
-Final value: 0 +- -nan(ind)
+Middle value: 4
+Standart error: sqrt(6 / 3 * 2) = 1
+Radom error: 0
+Absolute error: sqrt(pow(0 * 1, 2) + pow(2, 2)) = 2
+Relative error: 50
+Final value: 4 +- 2
+======
+Value: v
+Instrument error: 2
+Confidence level: 0.9
+Student koeff: 0
+Middle value: 1.66667
+Standart error: sqrt(0.666667 / 3 * 2) = 0.333333
+Radom error: 0
+Absolute error: sqrt(pow(0 * 0.333333, 2) + pow(2, 2)) = 2
+Relative error: 120
+Final value: 1.66667 +- 2
