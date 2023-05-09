@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
 <Qt_DEFINES_>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Qt_DEFINES_>
-<Qt_INCLUDEPATH_>C:\Users\Diemoon\AppData\Local\Temp\5sm2aqza.prz;C:\Qt\Qt5.7.0\5.7\msvc2015\include;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtWidgets;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtGui;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtANGLE;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtCore;C:\Users\Diemoon\AppData\Local\Temp\5sm2aqza.prz;C:\Qt\Qt5.7.0\5.7\msvc2015\mkspecs\win32-msvc2015</Qt_INCLUDEPATH_>
+<Qt_INCLUDEPATH_>C:\Users\Diemoon\AppData\Local\Temp\zumomrjj.2dh;C:\Qt\Qt5.7.0\5.7\msvc2015\include;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtWidgets;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtGui;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtANGLE;C:\Qt\Qt5.7.0\5.7\msvc2015\include\QtCore;C:\Users\Diemoon\AppData\Local\Temp\zumomrjj.2dh;C:\Qt\Qt5.7.0\5.7\msvc2015\mkspecs\win32-msvc2015</Qt_INCLUDEPATH_>
 <Qt_STDCPP_></Qt_STDCPP_>
 <Qt_RUNTIME_>MultiThreadedDebugDLL</Qt_RUNTIME_>
 <Qt_CL_OPTIONS_>-FS -Zc:strictStrings -Zc:throwingNew</Qt_CL_OPTIONS_>

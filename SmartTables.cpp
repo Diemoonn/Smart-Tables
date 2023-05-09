@@ -1,7 +1,7 @@
 #include "SmartTables.h"
 #include "stringProcessor.h"
 
-SmartTables::SmartTables(QWidget *parent)
+SmartTables::SmartTables(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
@@ -48,11 +48,11 @@ SmartTables::SmartTables(QWidget *parent)
 SmartTables::~SmartTables()
 {}
 
-void SmartTables::paintEvent(QPaintEvent * event)
+void SmartTables::paintEvent(QPaintEvent* event)
 {
     // layer 1
     BackgroungBox->DrawItem();
-    
+
     // layer 2
     TopBox->DrawItem();
 
@@ -61,7 +61,7 @@ void SmartTables::paintEvent(QPaintEvent * event)
         // layer 3
         ExternalNoTable->DrawItem();
         InternalNoTable->DrawItem();
-        
+
         /* also NoTable text label is drawing here */
     }
 }

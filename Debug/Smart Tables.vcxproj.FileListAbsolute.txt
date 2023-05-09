@@ -1,2 +1,2 @@
-C:\Coding\cpp_projects\Smart-Tables\Debug\Smart Tables.exe
-C:\Coding\cpp_projects\Smart Tables\Debug\Smart Tables.exe
+C:\Coding\cpp_projects\sandbox\Smart Tables\Debug\Smart Tables.exe
+C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Smart Tables", "Smart Tables.vcxproj", "{5964E46D-A853-4069-A2C9-EA2140B5B99E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Smart Tables", "Smart Tables.vcxproj", "{B24A49F0-964E-4819-88C5-2225364D8524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5964E46D-A853-4069-A2C9-EA2140B5B99E}.Debug|x86.ActiveCfg = Debug|Win32
-		{5964E46D-A853-4069-A2C9-EA2140B5B99E}.Debug|x86.Build.0 = Debug|Win32
-		{5964E46D-A853-4069-A2C9-EA2140B5B99E}.Release|x86.ActiveCfg = Release|Win32
-		{5964E46D-A853-4069-A2C9-EA2140B5B99E}.Release|x86.Build.0 = Release|Win32
+		{B24A49F0-964E-4819-88C5-2225364D8524}.Debug|x86.ActiveCfg = Debug|Win32
+		{B24A49F0-964E-4819-88C5-2225364D8524}.Debug|x86.Build.0 = Debug|Win32
+		{B24A49F0-964E-4819-88C5-2225364D8524}.Release|x86.ActiveCfg = Release|Win32
+		{B24A49F0-964E-4819-88C5-2225364D8524}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4823CE6A-AF48-4DF7-90DF-A9CDB830542B}
+		SolutionGuid = {E813FDD1-263A-49A8-8954-E8E0E271D27E}
 	EndGlobalSection
 EndGlobal

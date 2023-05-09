@@ -15,7 +15,9 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +25,8 @@ QT_BEGIN_NAMESPACE
 class Ui_SmartTablesClass
 {
 public:
+    QMenuBar *menuBar;
+    QToolBar *mainToolBar;
     QWidget *centralWidget;
     QStatusBar *statusBar;
 
@@ -30,7 +34,13 @@ public:
     {
         if (SmartTablesClass->objectName().isEmpty())
             SmartTablesClass->setObjectName(QStringLiteral("SmartTablesClass"));
-        SmartTablesClass->resize(1000, 661);
+        SmartTablesClass->resize(600, 400);
+        menuBar = new QMenuBar(SmartTablesClass);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        SmartTablesClass->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(SmartTablesClass);
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        SmartTablesClass->addToolBar(mainToolBar);
         centralWidget = new QWidget(SmartTablesClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         SmartTablesClass->setCentralWidget(centralWidget);

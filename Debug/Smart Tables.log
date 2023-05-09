@@ -1,13 +1,1 @@
-﻿  AbstractItem.cpp
-  CustomButton.cpp
-  ResultWindow.cpp
-  stringProcessor.cpp
-  Table.cpp
-  TextLabel.cpp
-  RectangleShape.cpp
-  SmartTables.cpp
-  main.cpp
-  qrc_SmartTables.cpp
-  moc_SmartTables.cpp
-  moc_ResultWindow.cpp
-  Smart Tables.vcxproj -> C:\Coding\cpp_projects\Smart Tables\Debug\Smart Tables.exe
+﻿  Smart Tables.vcxproj -> C:\Coding\cpp projects\Smart Tables\Debug\Smart Tables.exe

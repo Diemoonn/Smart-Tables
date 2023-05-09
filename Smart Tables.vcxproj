@@ -11,18 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5964E46D-A853-4069-A2C9-EA2140B5B99E}</ProjectGuid>
+    <ProjectGuid>{B24A49F0-964E-4819-88C5-2225364D8524}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
@@ -81,16 +81,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractItem.cpp" />
-    <ClCompile Include="CustomButton.cpp" />
-    <ClCompile Include="ResultWindow.cpp" />
     <ClCompile Include="stringProcessor.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="TextLabel.cpp" />
     <QtRcc Include="SmartTables.qrc" />
     <QtUic Include="SmartTables.ui" />
     <QtMoc Include="SmartTables.h" />
+    <ClCompile Include="AbstractItem.cpp" />
+    <ClCompile Include="CustomButton.cpp" />
     <ClCompile Include="RectangleShape.cpp" />
+    <ClCompile Include="ResultWindow.cpp" />
     <ClCompile Include="SmartTables.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -99,13 +99,10 @@
     <ClInclude Include="CustomButton.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="resource.h" />
-    <QtMoc Include="ResultWindow.h" />
     <ClInclude Include="stringProcessor.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="TextLabel.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Smart Tables.rc" />
+    <QtMoc Include="ResultWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -12,10 +12,10 @@ class SmartTables : public QMainWindow
     Q_OBJECT
 
 public:
-    SmartTables(QWidget *parent = nullptr);
+    SmartTables(QWidget* parent = nullptr);
     ~SmartTables();
 
-    virtual void paintEvent(QPaintEvent * event);
+    virtual void paintEvent(QPaintEvent* event);
 
 private:
     void HideStartInterface();
@@ -33,15 +33,15 @@ private:
     const int BUTTON_SIZE = 50;
     const int SPACE = 10;
 
-    RectangleShape * TopBox;
-    RectangleShape * ExternalNoTable;
-    RectangleShape * InternalNoTable;
-    RectangleShape * BackgroungBox;
+    RectangleShape* TopBox;
+    RectangleShape* ExternalNoTable;
+    RectangleShape* InternalNoTable;
+    RectangleShape* BackgroungBox;
 
-    TextLabel * NoTable;
+    TextLabel* NoTable;
 
-    CustomButton * NewColButton, * ProceedButton;
-    CustomButton * AddRow, * AddCol, * RemoveRow, * RemoveCol;
+    CustomButton* NewColButton, * ProceedButton;
+    CustomButton* AddRow, * AddCol, * RemoveRow, * RemoveCol;
 
-    Table * MainTable;
+    Table* MainTable;
 };
