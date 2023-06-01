@@ -33,7 +33,8 @@ void Table::AddRow()
 	for (int i = 0; i < m_table->columnCount(); i++)
 	{
 		QDoubleSpinBox * edit = new QDoubleSpinBox(m_table);
-		edit->setDecimals(10);
+		edit->setDecimals(precision);
+		edit->setMaximum(maxValue);
 
 		m_table->setCellWidget(m_table->rowCount() - 1, i, edit);
 	}
@@ -51,7 +52,8 @@ void Table::AddCol()
 	for (int i = 0; i < m_table->rowCount(); i++)
 	{
 		QDoubleSpinBox * edit = new QDoubleSpinBox(m_table);
-		edit->setDecimals(10);
+		edit->setDecimals(precision);
+		edit->setMaximum(maxValue);
 
 		m_table->setCellWidget(i, m_table->columnCount() - 1, edit);
 	}

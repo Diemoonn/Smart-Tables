@@ -31,6 +31,9 @@ private:
 
 	int m_rows, m_cols;
 
+	int precision = 10;
+	int maxValue = 99999999;
+
 	QTableWidget * m_table;
 
 	ResultWindow * m_result;
